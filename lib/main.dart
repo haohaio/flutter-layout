@@ -87,13 +87,6 @@ Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situate
       ),
     );
 
-    Widget bannerSection = Image.asset(
-      'images/lake.jpg',
-      width: 600,
-      height: 240,
-      fit: BoxFit.cover, // 图像应该尽可能小，但覆盖整个渲染框
-    );
-
     return MaterialApp(
         title: 'Flutter Demo',
         // 设置主题，但只会在 子widget 的 build 方法中通过Theme.of(context)函数获取时才会生效，当前 widget 获取时并不会生效
@@ -106,7 +99,11 @@ Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situate
           ),
           body: ListView(
             children: [
-              bannerSection,
+              Image.asset(
+                'images/lake.jpg',
+                height: 240,
+                fit: BoxFit.cover, // 图像应该尽可能小，但覆盖整个渲染框。等比例缩放图象到垂直和水平两项均填满区域
+              ),
               titleSection,
               buttonSection,
               textSection,
@@ -214,9 +211,8 @@ Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situate
         children: [
           Image.asset(
             'images/lake.jpg',
-            width: 600,
             height: 240,
-            fit: BoxFit.cover, // 图像应该尽可能小，但覆盖整个渲染框
+            fit: BoxFit.cover, // 图像应该尽可能小，但覆盖整个渲染框。等比例缩放图象到垂直和水平两项均填满区域
           ),
           titleSection,
           buttonSection,
